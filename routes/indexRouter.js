@@ -19,4 +19,9 @@ indexRouter.get("/", (req, res) => {
     res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
+indexRouter.get("/:id", (req, res) => {
+    const {id} = req.params;
+    res.render("message", {user: messages[id].user, text: messages[id].text, date: messages[id].added});
+  });
+
 module.exports = {indexRouter, messages};

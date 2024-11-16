@@ -8,10 +8,11 @@
   <body>
     <h1><%= locals.title %></h1>
     <a href="/new">Create new message</a>
-    <% locals.messages.forEach((message) =>{ %>
+    <% locals.messages.forEach((message, index) =>{ %>
         <div>
             <h3><%= message.user %></h3>
-            <p><%= message.text %></p> 
+            <p><%= message.text %></p>
+            <button onclick="window.location.href='<%= index %>';">Details</button>
             <h4><%= message.added %></h4>   
         </div>
         <hr>
